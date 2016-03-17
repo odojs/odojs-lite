@@ -1,3 +1,3 @@
-# Odo.js Lite
+# Odo.js is awesome
 
-Frontend only example of odojs
+This will be a fantastic landing page for the Odo.js project.
