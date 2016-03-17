@@ -1,0 +1,46 @@
+{
+  "name": "odojs-lite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "app": "node server.js",
+    "js": "./node_modules/.bin/browserify ./client.js --debug | ./node_modules/.bin/exorcist ./dist/bundle.js.map > ./dist/bundle.js",
+    "wjs": "./node_modules/.bin/watchify ./client.js -o ./dist/bundle.js",
+    "css": "./node_modules/.bin/stylus --include-css style/index.styl -o ./dist/bundle.css",
+    "wcss": "./node_modules/.bin/stylus --include-css --watch style/index.styl -o ./dist/bundle.css"
+  },
+  "author": "Thomas Coats <github@voodoolabs.net>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odojs/odojs-lite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/odojs/odojs-lite/issues"
+  },
+  "homepage": "https://github.com/odojs/odojs-lite",
+  "dependencies": {
+    "express": "4.13.4",
+    "whakaruru": "1.0.2",
+    "http-mutunga": "1.0.0",
+
+    "flexy-grid": "0.3.0",
+    "normalize.css": "3.0.3",
+    "odo-relay": "2.4.0",
+    "odojs": "4.4.0",
+    "odoql": "7.10.0",
+    "odoql-exe": "1.6.2",
+
+    "superagent": "1.8.1",
+    "injectinto": "1.2.0",
+    "page": "1.7.1",
+    "odo-route": "1.3.1"
+  },
+  "devDependencies": {
+    "exorcist": "0.4.0",
+    "browserify": "13.0.0",
+    "stylus": "0.54.2",
+    "watchify": "3.7.0"
+  }
+}

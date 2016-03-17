@@ -1,2 +1,3 @@
-# odojs-lite
-Frontend only version of odojs
+# Odo.js Lite
+
+Frontend only example of odojs
