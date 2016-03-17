@@ -3,13 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "description": "The odojs.com website written in odo.js",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "app": "node server.js",
-    "js": "./node_modules/.bin/browserify ./client.js --debug | ./node_modules/.bin/exorcist ./dist/bundle.js.map > ./dist/bundle.js",
-    "wjs": "./node_modules/.bin/watchify ./client.js -o ./dist/bundle.js",
-    "css": "./node_modules/.bin/stylus --include-css style/index.styl -o ./dist/bundle.css",
-    "wcss": "./node_modules/.bin/stylus --include-css --watch style/index.styl -o ./dist/bundle.css"
+    "js": "./node_modules/.bin/browserify ./index.js --debug | ./node_modules/.bin/exorcist ./bundle.js.map > ./bundle.js",
+    "wjs": "./node_modules/.bin/watchify ./index.js -o ./bundle.js",
+    "css": "./node_modules/.bin/stylus --include-css ./index.styl -o ./bundle.css",
+    "wcss": "./node_modules/.bin/stylus --include-css --watch ./index.styl -o ./bundle.css"
   },
   "author": "Thomas Coats <github@voodoolabs.net>",
   "license": "MIT",

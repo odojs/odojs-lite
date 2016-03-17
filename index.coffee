@@ -27,11 +27,11 @@ ql = ql
 marked = require 'marked'
 renderrichtext = widget
   render: (state, params) ->
-    dom 'div.definition'
-  afterMount: (el, state, params) ->
-    el.innerHTML = marked params
-  onUpdate: (el, state, params) ->
-    el.innerHTML = marked params
+    dom '.definition'
+  afterMount: (el, state) ->
+    el.innerHTML = marked state
+  onUpdate: (el, state) ->
+    el.innerHTML = marked state
 
 router = component
   query: (params) ->
@@ -51,7 +51,7 @@ router = component
         dom '.col-xs-9.content', [
           dom 'h6.pull-right', dom 'a', { attributes: href: 'https://github.com/odojs/odojs.com/edit/gh-pages/README.md' }, 'pull requests welcome & encouraged'
           dom 'h6', 'README.md'
-          renderrichtext null, state.content
+          renderrichtext state.content
         ]
       ]
     ]

@@ -41,13 +41,13 @@ marked = require('marked');
 
 renderrichtext = widget({
   render: function(state, params) {
-    return dom('div.definition');
+    return dom('.definition');
   },
-  afterMount: function(el, state, params) {
-    return el.innerHTML = marked(params);
+  afterMount: function(el, state) {
+    return el.innerHTML = marked(state);
   },
-  onUpdate: function(el, state, params) {
-    return el.innerHTML = marked(params);
+  onUpdate: function(el, state) {
+    return el.innerHTML = marked(state);
   }
 });
 
@@ -85,7 +85,7 @@ router = component({
             attributes: {
               href: 'https://github.com/odojs/odojs.com/edit/gh-pages/README.md'
             }
-          }, 'pull requests welcome & encouraged')), dom('h6', 'README.md'), renderrichtext(null, state.content)
+          }, 'pull requests welcome & encouraged')), dom('h6', 'README.md'), renderrichtext(state.content)
         ])
       ])
     ]);
