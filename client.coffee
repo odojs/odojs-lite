@@ -11,7 +11,7 @@ router = component
   render: (state, params, hub) ->
     params.autocomplete ?= {}
     dom '#root', [
-      dom 'p', 'Some trash here'
+      dom 'p', 'Odo.js'
     ]
 
 root = document.querySelector '#root'

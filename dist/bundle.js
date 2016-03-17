@@ -23,7 +23,7 @@ router = component({
     if (params.autocomplete == null) {
       params.autocomplete = {};
     }
-    return dom('#root', [dom('p', 'Some trash here')]);
+    return dom('#root', [dom('p', 'Odo.js')]);
   }
 });
 
