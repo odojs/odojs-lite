@@ -39,7 +39,8 @@ ql = require 'odoql'
 ql = ql
   .use 'store'
 
-marked = require 'marked'
+katex = require 'katex'
+kramed = require 'kramed'
 hljs = require 'highlight.js'
 renderrichtext = widget
   render: (state, params) ->
@@ -47,7 +48,7 @@ renderrichtext = widget
   afterMount: (el, state) ->
     @spec.onUpdate.call @, el, state
   onUpdate: (el, state) ->
-    el.innerHTML = marked state
+    el.innerHTML = kramed state
     hljs.highlightBlock code for code in el.querySelectorAll 'pre > code'
     for link in el.querySelectorAll 'a[href]'
       href = link.getAttribute 'href'
@@ -55,6 +56,12 @@ renderrichtext = widget
       continue if href.indexOf(':') isnt -1
       continue if href.indexOf('#') isnt -1
       link.setAttribute 'href', "?#{caseiffound href}"
+    equations = document.querySelectorAll 'script[type^=math]'
+    for equation in equations
+      eq = document.createElement 'span'
+      equation.parentNode.insertBefore eq, equation
+      katex.render equation.innerHTML, eq
+      equation.parentNode.removeChild equation
 
 router = component
   query: (params) ->

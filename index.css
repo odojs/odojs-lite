@@ -1,4 +1,5 @@
 @import "bootstrap.min.css";
+@import "katex.min.css";
 @import "./node_modules/highlight.js/styles/docco.css";
 .toc {
   margin-top: 20px;
