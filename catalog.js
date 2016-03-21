@@ -22,14 +22,6 @@ for (i = 0, len = files.length; i < len; i++) {
   results.push(file.slice(0, -3));
 }
 
-results.sort(function(a, b) {
-  if (a.filename < b.filename) {
-    return -1;
-  }
-  if (a.filename > b.filename) {
-    return 1;
-  }
-  return 0;
-});
+results.sort();
 
 fs.writeFileSync('catalog.json', JSON.stringify(results, null, 2));

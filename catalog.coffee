@@ -8,8 +8,5 @@ for file in files
   continue if file.substr(-3) isnt '.md'
   continue if file[0] is '_'
   results.push file[0...-3]
-results.sort (a,b) ->
-  return -1 if a.filename < b.filename
-  return 1 if a.filename > b.filename
-  0
+results.sort()
 fs.writeFileSync 'catalog.json', JSON.stringify results, null, 2

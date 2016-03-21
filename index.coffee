@@ -8,11 +8,17 @@ store = require 'odoql-store'
 request = require 'superagent'
 catalog = require './catalog.json'
 
+caseiffound = (s) ->
+  s = s.toUpperCase()
+  for item in catalog
+    return item if s is item.toUpperCase()
+  s
+
 getfilename = ->
   file = window.location.search
   file = file.substr 1 if file.length > 1
-  file = 'Home' if file is ''
-  file
+  file = 'home' if file is ''
+  caseiffound file
 
 getfilepath = -> "wiki/#{getfilename()}.md"
 
@@ -47,7 +53,8 @@ renderrichtext = widget
       href = link.getAttribute 'href'
       continue if href.indexOf('/') isnt -1
       continue if href.indexOf(':') isnt -1
-      link.setAttribute 'href', "?#{href}"
+      continue if href.indexOf('#') isnt -1
+      link.setAttribute 'href', "?#{caseiffound href}"
 
 router = component
   query: (params) ->
@@ -66,9 +73,13 @@ router = component
         dom '.col-xs-3.toc', [
           dom 'h6', 'Table of contents'
           dom '.list-group', catalog.map (item) ->
-            linkel = 'a.list-group-item'
-            linkel += '.active' if getfilename().toLowerCase() is item.toLowerCase()
-            dom linkel, { attributes: href: "?#{item.toLowerCase()}" }, item
+            if getfilename() is item
+              dom '.list-group-item.active', [
+                dom 'span.pull-right', '▶'
+                item
+              ]
+            else
+              dom 'a.list-group-item', { attributes: href: "?#{item.toLowerCase()}" }, item
         ]
         dom '.col-xs-9.content', [
           dom 'h6', dom 'a', { attributes: href: "https://github.com/odojs/odojs/wiki/#{getfilename()}" }, getfilename()
