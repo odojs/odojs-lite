@@ -8,7 +8,8 @@
     "js": "./node_modules/.bin/browserify ./index.js --debug | ./node_modules/.bin/exorcist ./bundle.js.map > ./bundle.js",
     "wjs": "./node_modules/.bin/watchify ./index.js -o ./bundle.js",
     "css": "./node_modules/.bin/stylus --include-css ./index.styl -o ./bundle.css",
-    "wcss": "./node_modules/.bin/stylus --include-css --watch ./index.styl -o ./bundle.css"
+    "wcss": "./node_modules/.bin/stylus --include-css --watch ./index.styl -o ./bundle.css",
+    "catalog": "node ./catalog"
   },
   "author": "Thomas Coats <github@voodoolabs.net>",
   "license": "MIT",
