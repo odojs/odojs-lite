@@ -116,6 +116,7 @@ Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine
 .definition {
   border: 1px solid #ddd;
   padding: 0 20px 2em 20px;
+  margin-bottom: 5em;
 }
 .pull {
   text-align: right;
