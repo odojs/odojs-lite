@@ -2,6 +2,7 @@
 @import "./node_modules/highlight.js/styles/docco.css";
 .toc {
   margin-top: 20px;
+  margin-bottom: 5em;
 }
 .content {
   margin-top: 20px;
