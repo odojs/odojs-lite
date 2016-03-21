@@ -79,7 +79,7 @@ router = component
                 item
               ]
             else
-              dom 'a.list-group-item', { attributes: href: "?#{item.toLowerCase()}" }, item
+              dom 'a.list-group-item', { attributes: href: "?#{item}" }, item
         ]
         dom '.col-xs-9.content', [
           dom 'h6', dom 'a', { attributes: href: "https://github.com/odojs/odojs/wiki/#{getfilename()}" }, getfilename()

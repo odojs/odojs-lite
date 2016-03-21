@@ -137,7 +137,7 @@ router = component({
             } else {
               return dom('a.list-group-item', {
                 attributes: {
-                  href: "?" + (item.toLowerCase())
+                  href: "?" + item
                 }
               }, item);
             }
