@@ -38,6 +38,7 @@ getfilename = function() {
   if (file === '') {
     file = 'home';
   }
+  file = decodeURIComponent(file);
   return caseiffound(file);
 };
 

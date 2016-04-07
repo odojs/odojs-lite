@@ -6,7 +6,10 @@ module.exports=[
   "Examples",
   "Home",
   "Hook",
+  "Hub",
   "Partial",
+  "Query Language",
+  "Relay",
   "SVG",
   "Widget"
 ]
@@ -51,6 +54,7 @@ getfilename = function() {
   if (file === '') {
     file = 'home';
   }
+  file = decodeURIComponent(file);
   return caseiffound(file);
 };
 
@@ -762,6 +766,7 @@ if (typeof document !== 'undefined') {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
 },{"min-document":3}],12:[function(require,module,exports){
 /*
 Syntax highlighting with language autodetection.
@@ -16209,6 +16214,7 @@ function Individual(key, value) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
 },{}],165:[function(require,module,exports){
 'use strict';
 
@@ -31020,6 +31026,7 @@ module.exports = function (string, locale) {
 */
 
 }).call(this,require('_process'))
+
 },{"_process":5}],250:[function(require,module,exports){
 var now = require('performance-now')
   , global = typeof window === 'undefined' ? {} : window
@@ -31357,6 +31364,7 @@ module.exports = /([\u0030-\u0039\u00B2\u00B3\u00B9\u00BC-\u00BE\u0660-\u0669\u0
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
 },{"_process":5}],257:[function(require,module,exports){
 /**
  * Module dependencies.
@@ -35230,4 +35238,5 @@ function extend() {
     return target
 }
 
-},{}]},{},[2]);
+},{}]},{},[2])
+//# sourceMappingURL=bundle.js.map

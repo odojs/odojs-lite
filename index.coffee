@@ -18,6 +18,7 @@ getfilename = ->
   file = window.location.search
   file = file.substr 1 if file.length > 1
   file = 'home' if file is ''
+  file = decodeURIComponent file
   caseiffound file
 
 getfilepath = -> "wiki/#{getfilename()}.md"
