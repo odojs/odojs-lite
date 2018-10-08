@@ -35,13 +35,13 @@
     "odoql-exe": "1.6.2",
     "odoql-store": "0.1.0",
     "page": "1.7.1",
-    "superagent": "1.8.1",
+    "stylus": "^0.54.5",
+    "superagent": "^4.0.0-beta.5",
     "whakaruru": "1.0.2"
   },
   "devDependencies": {
-    "exorcist": "0.4.0",
     "browserify": "13.0.0",
-    "stylus": "0.54.2",
+    "exorcist": "0.4.0",
     "watchify": "3.7.0"
   }
 }
